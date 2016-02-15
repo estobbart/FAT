@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FontSelectorViewController.h"
+#import "FATContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  self.window = [[UIWindow alloc] init];
+  FontSelectorViewController *fsVC = [[FontSelectorViewController alloc] init];
+  self.window.rootViewController = [[FATContainerViewController alloc] initWithBaseViewController:fsVC];
+  [self.window makeKeyAndVisible];
   return YES;
 }
 
